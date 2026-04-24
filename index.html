@@ -9,7 +9,7 @@
             --eggplant: #4B0082; /* اللون الباذنجاني */
             --gold: #D4AF37; 
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
         
         body { 
             background-color: var(--eggplant); 
@@ -18,74 +18,105 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 15px; /* تقليل البادينج للموبايل */
         }
 
         .header-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 10px;
+            margin-bottom: 25px;
             width: 100%;
         }
 
         .moh-logo {
-            width: 120px;
+            display: block;
+            margin: 0 auto 15px auto;
+            width: 110px; /* حجم متناسق للشعار */
             height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
 
-        h1 { font-size: 1.5rem; margin-bottom: 5px; }
-        p { color: #ccc; font-size: 0.9rem; }
+        h1 { 
+            font-size: 1.6rem; 
+            margin-bottom: 8px; 
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
 
-        /* حاوية الفورم لضمان التنسيق */
+        p.subtitle { 
+            color: #e0e0e0; 
+            font-size: 0.95rem; 
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        /* حاوية الفورم */
         .form-wrapper {
             width: 100%;
-            max-width: 700px;
-            background: white; /* خلفية بيضاء للفورم ليبرز النص */
-            border-radius: 20px;
+            max-width: 750px;
+            background: white; 
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            border: 4px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 3px solid var(--gold);
+            /* لمنع مشاكل السكرول في الموبايل */
+            -webkit-overflow-scrolling: touch; 
         }
 
         iframe {
             width: 100%;
-            /* الارتفاع سيتم ضبطه تلقائياً ليناسب محتوى جوجل */
-            height: 85vh; 
+            height: 80vh; /* ارتفاع متناسب مع الشاشة */
             border: none;
+            display: block;
         }
 
         .back-link {
-            margin-top: 20px;
+            margin: 25px 0;
             color: white;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.1);
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 50px;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
-        .back-link:hover { background: var(--gold); }
+        
+        .back-link:hover { 
+            background: var(--gold); 
+            color: var(--eggplant);
+            transform: translateY(-2px);
+        }
 
+        /* تحسينات للشاشات الصغيرة */
         @media (max-width: 600px) {
-            .form-wrapper { border-radius: 10px; }
-            h1 { font-size: 1.2rem; }
+            h1 { font-size: 1.3rem; }
+            .moh-logo { width: 90px; }
+            iframe { height: 75vh; }
+            body { padding: 10px; }
         }
     </style>
 </head>
 <body>
 
     <div class="header-section">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0N-9LhYtO_9_6W_0p8y1n9x1_2" alt="شعار وزارة الصحة" class="moh-logo">        <h1>وزارة الصحة الفلسطينية</h1>
-        <p>بوابة تقديم طلبات المساعدة والتحويلات</p>
+        <img src="logo.png" alt="شعار وزارة الصحة" class="moh-logo">
+        
+        <h1>وزارة الصحة الفلسطينية</h1>
+        <p class="subtitle">بوابة تقديم طلبات المساعدة والتحويلات الطبية</p>
     </div>
 
     <div class="form-wrapper">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxrR6we5hAUHVcyAti_LIn5QBzsvY1FDnFuE0zE5SpajGNvA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>
     </div>
 
-    <a href="application.html" class="back-link">⬅ عودة لبوابة الطلبات</a>
+    <a href="application.html" class="back-link">🔙 العودة لبوابة الطلبات</a>
+
+    <footer style="margin-bottom: 20px; font-size: 0.8rem; color: rgba(255,255,255,0.5);">
+        منصة آفاق - 2026
+    </footer>
 
 </body>
 </html>
